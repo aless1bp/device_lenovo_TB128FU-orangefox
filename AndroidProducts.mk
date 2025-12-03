@@ -22,5 +22,6 @@ PRODUCT_MAKEFILES := \
 COMMON_LUNCH_CHOICES := \
     twrp_TB128FU-userdebug \
     twrp_TB128FU-eng \
+    fox_TB128FU-userdebug \
     fox_TB128FU-eng
 
