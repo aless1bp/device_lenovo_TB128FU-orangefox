@@ -36,11 +36,3 @@ Bluetooth    | v5.1
 USB          | USB-C 2.0 (charging/storage/OTG)
 Release Date | October 2022 (India)
 
-## To build
-Build with [minimal AOSP TWRP for Android 12.1](https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp/tree/twrp-12.1) 
-
-```
-. build/envsetup.sh
-lunch twrp_TB128FU-eng
-mka recoveryimage
-```
