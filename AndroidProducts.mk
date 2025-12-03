@@ -16,9 +16,11 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_TB128FU.mk
+    $(LOCAL_DIR)/twrp_TB128FU.mk \
+    $(LOCAL_DIR)/fox_TB128FU.mk
 
 COMMON_LUNCH_CHOICES := \
     twrp_TB128FU-userdebug \
-    twrp_TB128FU-eng
+    twrp_TB128FU-eng \
+    fox_TB128FU-eng
 

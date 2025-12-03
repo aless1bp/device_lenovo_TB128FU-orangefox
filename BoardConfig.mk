@@ -179,9 +179,8 @@ TW_INCLUDE_PYTHON := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_RESETPROP := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
-TW_ROTATION := 270
 TW_SCREEN_BLANK_ON_BOOT := true
-TW_THEME := landscape_hdpi
+TW_THEME := portrait_hdpi
 TW_USE_TOOLBOX := true
 
 # TWRP Debug Flags
