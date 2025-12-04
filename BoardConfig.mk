@@ -54,7 +54,7 @@ BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=4e00000.dwc3
 BOARD_KERNEL_CMDLINE += androidboot.console=ttyMSM0
 BOARD_KERNEL_CMDLINE += loop.max_part=7
-BOARD_KERNEL_CMDLINE += printk.devkmsg=on 
+BOARD_KERNEL_CMDLINE += printk.devkmsg=on
 
 BOARD_HEADER_VERSION       := 2
 BOARD_KERNEL_PAGESIZE      := 4096

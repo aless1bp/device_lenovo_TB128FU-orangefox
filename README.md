@@ -168,7 +168,6 @@ mka recoveryimage
    - Try a different USB cable and port
    - Ensure battery is charged above 50%
    - Test with stock recovery to verify hardware is working
-   ```
 
 ### Touch not working
 The touch screen is configured with XY swap and Y flip for proper operation in portrait mode.
