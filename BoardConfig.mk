@@ -197,7 +197,8 @@ TW_USE_TOOLBOX := true
 
 # Performance optimizations
 TW_NO_LEGACY_PROPS := true
-TW_OVERRIDE_SYSTEM_PROPS := "ro.build.fingerprint=ro.system.build.fingerprint"
+TW_OVERRIDE_SYSTEM_PROPS := \
+    "ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
 TW_INCLUDE_LIBRESETPROP := true
 
 # Display / Rotation (2000x1200 @ 240 DPI - HDPI)

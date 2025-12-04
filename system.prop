@@ -15,7 +15,9 @@ keymaster_ver=4.1
 
 # Touch and UI optimization properties
 persist.vendor.qti.inputopts.enable=true
+# Move touch slop optimization - 0.6 provides responsive touch without false triggers
 persist.vendor.qti.inputopts.movetouchslop=0.6
+# Disable input resampling for lower touch latency
 ro.input.noresample=1
 
 # Performance optimizations for recovery

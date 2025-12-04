@@ -36,11 +36,13 @@ export OF_STATUS_INDENT_RIGHT=48
 export OF_ALLOW_DISABLE_NAVBAR=0
 export OF_CLOCK_POS=1
 
-# Touch and input optimization
+# Display and LED settings
 export OF_USE_GREEN_LED=0
 export OF_HIDE_NOTCH=0
 
 # Performance optimizations
+# Note: OF_DISABLE_DM_VERITY allows users to optionally disable DM-verity for custom ROMs
+# This does not automatically disable it - user must choose this option in recovery
 export OF_DISABLE_DM_VERITY=1
 export OF_DISABLE_FORCED_ENCRYPTION=0
 
