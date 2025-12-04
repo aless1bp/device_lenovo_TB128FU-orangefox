@@ -140,7 +140,7 @@ This can occur during initial boot with encrypted data. The recovery is initiali
 5. If recovery still won't start, performing a wipe data/cache will clear encryption and allow faster boot
 
 ### Touch not working
-The touch screen is configured with XY swap only for proper operation in portrait mode.
+The touch screen is configured with X and Y axis flipping for proper operation in portrait inverted mode (180° rotation).
 
 ### Decryption issues
 - The recovery supports FBE with metadata decryption
@@ -150,11 +150,11 @@ The touch screen is configured with XY swap only for proper operation in portrai
 ## Device-Specific Information
 
 ### Display Configuration
-- Resolution: 1200x2000 (portrait mode)
+- Resolution: 2000x1200 (portrait inverted, 180° rotation)
 - Theme: portrait_hdpi
 - Brightness path: `/sys/class/backlight/panel0-backlight/brightness`
 - Default brightness: 200/255
-- Touch configuration: XY swapped only
+- Touch configuration: Flip X and Y axes
 
 ### Partitions
 - A/B device with virtual A/B support
