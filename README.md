@@ -36,3 +36,31 @@ Bluetooth    | v5.1
 USB          | USB-C 2.0 (charging/storage/OTG)
 Release Date | October 2022 (India)
 
+## Optimizations (v2-optimized)
+
+This build includes several optimizations for improved touchscreen responsiveness and overall user experience:
+
+### Touchscreen Improvements
+- **Enhanced touch calibration**: Proper flip X/Y settings for 180° rotation
+- **Optimized input handling**: Blacklisted problematic virtual input devices
+- **Touch responsiveness**: Added QTI input optimization properties
+- **Screen timeout**: Set to 120 seconds for better usability
+
+### Display & UI Enhancements
+- **Improved brightness**: Default brightness increased to 120 (from 80) for better visibility
+- **Proper backlight path**: Configured correct sysfs path for brightness control
+- **60 FPS framerate**: Smooth UI animations
+- **Screen density**: Properly set to 240 DPI
+
+### Performance Optimizations
+- **Filesystem compression**: Enabled for faster operations
+- **No reload after decryption**: Faster boot after successful decryption
+- **Optimized system properties**: Cleaned up property overrides
+- **Debug capabilities**: Includes logcat, debuggerd, and strace for troubleshooting
+
+### OrangeFox-Specific Features
+- **Vanilla build**: Clean OrangeFox without bloat
+- **Size optimization**: Drastic size reduction enabled
+- **Quick backup**: Pre-configured backup list (/boot, /data)
+- **Modern tools**: Includes Bash shell, Nano editor, and essential utilities
+

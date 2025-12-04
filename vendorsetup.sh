@@ -36,6 +36,14 @@ export OF_STATUS_INDENT_RIGHT=48
 export OF_ALLOW_DISABLE_NAVBAR=0
 export OF_CLOCK_POS=1
 
+# Touch and input optimization
+export OF_USE_GREEN_LED=0
+export OF_HIDE_NOTCH=0
+
+# Performance optimizations
+export OF_DISABLE_DM_VERITY=1
+export OF_DISABLE_FORCED_ENCRYPTION=0
+
 # ===== DEVICE-SPECIFIC SETTINGS =====
 export OF_NO_TREBLE_COMPATIBILITY_CHECK=1
 export OF_FBE_METADATA_MOUNT_IGNORE=1
@@ -64,10 +72,18 @@ export FOX_USE_NANO_EDITOR=1
 export OF_DONT_KEEP_LOG_HISTORY=1
 export OF_NO_SPLASH_CHANGE=1
 
+# UI and touchscreen responsiveness
+export OF_ENABLE_FS_COMPRESSION=1
+export OF_SKIP_MULTIUSER_FOLDERS_BACKUP=1
+
 # ===== R11+ SETTINGS =====
 export FOX_ENABLE_APP_MANAGER=0
 export OF_USE_TWRP_SAR_DETECT=1
 export OF_QUICK_BACKUP_LIST="/boot;/data;"
+
+# Additional performance flags
+export OF_RUN_POST_FORMAT_PROCESS=0
+export OF_NO_RELOAD_AFTER_DECRYPTION=1
 
 # ===== SIZE OPTIMIZATION =====
 export FOX_DRASTIC_SIZE_REDUCTION=1
@@ -78,8 +94,8 @@ export OF_FORCE_PREBUILT_KERNEL=1
 # ===== BUILD IDENTIFIERS =====
 # FOX_VERSION is obsolete since R11.3 - do not use
 # Use FOX_MAINTAINER_PATCH_VERSION instead for custom versioning
-export FOX_MAINTAINER_PATCH_VERSION="1"
-export FOX_VARIANT="TB128FU"
+export FOX_MAINTAINER_PATCH_VERSION="2-optimized"
+export FOX_VARIANT="TB128FU-Optimized"
 
 # ===== CCACHE FOR FASTER BUILDS =====
 export USE_CCACHE=1

@@ -12,3 +12,12 @@ ro.crypto.volume.metadata.method=dm-default-key
 
 # Needed for keymaster randomly hanging boot
 keymaster_ver=4.1
+
+# Touch and UI optimization properties
+persist.vendor.qti.inputopts.enable=true
+persist.vendor.qti.inputopts.movetouchslop=0.6
+ro.input.noresample=1
+
+# Performance optimizations for recovery
+ro.sf.lcd_density=240
+debug.sf.enable_hwc_vds=0

@@ -163,9 +163,16 @@ BOARD_VNDK_VERSION := current
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_RECOVERY_QCOM_RTC_FIX := true
-TW_DEFAULT_BRIGHTNESS := "80"
+
+# Brightness settings - optimized for better visibility
+TW_DEFAULT_BRIGHTNESS := "120"
 TW_MAX_BRIGHTNESS := 255
-TW_DEVICE_VERSION := Royna
+TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
+
+# Device version and identification
+TW_DEVICE_VERSION := Royna-Optimized
+
+# Feature flags - optimized build
 TW_EXCLUDE_APEX := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXCLUDE_TWRPAPP := true
@@ -177,9 +184,21 @@ TW_INCLUDE_NTFS_3G := true
 TW_INCLUDE_PYTHON := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_RESETPROP := true
+
+# Input optimization - blacklist problematic virtual input
 TW_INPUT_BLACKLIST := "hbtp_vm"
+
+# Screen behavior optimization
 TW_SCREEN_BLANK_ON_BOOT := true
+TW_NO_SCREEN_BLANK := false
+
+# Toolbox
 TW_USE_TOOLBOX := true
+
+# Performance optimizations
+TW_NO_LEGACY_PROPS := true
+TW_OVERRIDE_SYSTEM_PROPS := "ro.build.fingerprint=ro.system.build.fingerprint"
+TW_INCLUDE_LIBRESETPROP := true
 
 # Display / Rotation (2000x1200 @ 240 DPI - HDPI)
 TW_THEME := portrait_hdpi
@@ -197,6 +216,13 @@ TARGET_SCREEN_DENSITY := 240
 RECOVERY_TOUCHSCREEN_FLIP_Y := true
 RECOVERY_TOUCHSCREEN_FLIP_X := true
 
+# Enhanced touchscreen settings
+RECOVERY_TOUCHSCREEN_SWAP_XY := false
+TW_NO_SCREEN_TIMEOUT := false
+TW_SCREEN_TIMEOUT_SECS := 120
+TW_NO_BATT_PERCENT := false
+TW_NO_CPU_TEMP := false
+
 # TWRP Debug Flags
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
@@ -207,6 +233,4 @@ RECOVERY_BINARY_SOURCE_FILES += $(TARGET_OUT_EXECUTABLES)/strace
 
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 BUILD_BROKEN_DUP_RULES := true
-
-TW_OVERRIDE_SYSTEM_PROPS := \ "ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
 
