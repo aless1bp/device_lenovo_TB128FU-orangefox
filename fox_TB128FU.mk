@@ -40,6 +40,9 @@ PRODUCT_BRAND := Lenovo
 PRODUCT_MODEL := Lenovo TB128FU
 PRODUCT_MANUFACTURER := LENOVO
 
+# Additional device identifiers for OTA compatibility
+TARGET_OTA_ASSERT_DEVICE := TB128FU,qssi
+
 # OrangeFox settings
 OF_HIDE_NOTCH := 1
 OF_USE_GREEN_LED := 0
