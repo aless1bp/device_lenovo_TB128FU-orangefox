@@ -2,7 +2,13 @@
 ![Lenovo Tab M10 Plus Gen 3](https://p4-ofp.static.pub/fes/cms/2022/02/10/mzr7bhnqxvv3n35809y8blhsklcjpj515071.png "Lenovo Smart Tab M10 Plus Gen 3 (TB-128FU)")
 
 ## Release info
+⚠️ **BETA RELEASE - Use with caution!**
+
 This is an unofficial OrangeFox Recovery build. Install at your own risk.
+
+**IMPORTANT:** Backup your files with another tool (not OrangeFox) before using in case things go wrong.
+
+**⚠️ REQUIREMENT:** Your phone must have an **unlocked bootloader** for this to work.
 
 There are five flavours of this tablet. This OrangeFox Recovery will not work on all of them.
 
@@ -62,25 +68,46 @@ mka recoveryimage
 ## Installation
 
 ### Prerequisites
-- Unlocked bootloader
+- **UNLOCKED BOOTLOADER** (critical requirement)
 - ADB and Fastboot tools installed
 - USB debugging enabled
+- **Backup of all important data** (using a tool other than OrangeFox)
 
-### Installation Steps
-1. Boot your tablet into fastboot mode:
-   - Power off the device
-   - Hold Volume Down + Power until you see the fastboot screen
+### Recommended Installation Method
 
-2. Flash the recovery image:
+1. **Extract recovery.img** from the downloaded zip file
+
+2. **Reboot to bootloader:**
+   ```bash
+   adb reboot bootloader
+   ```
+
+3. **Flash the recovery image:**
    ```bash
    fastboot flash recovery recovery.img
    ```
 
-3. Reboot to recovery:
+4. **Boot into recovery** and flash the zip file to complete the installation:
+   - Hold Volume Up + Power while rebooting
+   - Or use: `fastboot reboot recovery`
+
+5. **If recovery bootloops after flashing:** Disable verity verification by flashing vbmeta:
    ```bash
-   fastboot reboot recovery
+   fastboot --disable-verity --disable-verification flash vbmeta vbmeta.img
    ```
-   Or manually: hold Volume Up + Power after flashing
+   (Use the vbmeta.img from your current ROM)
+
+### Alternative Installation Method
+
+**Flash the zip directly from TWRP** (might not work reliably)
+
+### EDL Installation (Advanced)
+
+If bootloader is unlocked but critical_partitions are locked, you can flash recovery.img via EDL using QFIL V3:
+
+⚠️ **Important:** Use QFIL V3, NOT V2.0.35 (both show "V2.0.35" at launch but V2.0.35 does not work properly)
+
+Refer to EDL/QFIL guides for detailed instructions.
 
 ## Features
 
@@ -143,6 +170,7 @@ The touch screen is configured with XY swap only for proper operation in portrai
 ## Credits
 - Maintainer: [aless1bp](https://github.com/aless1bp)
 - Based on TWRP device tree by Royna
+- Configuration references from [TB320FC by NeutroGe](https://github.com/NeutroGe/android_device_lenovo_TB320FC)
 - OrangeFox Recovery by [OrangeFox Team](https://gitlab.com/OrangeFox)
 
 ## Support
