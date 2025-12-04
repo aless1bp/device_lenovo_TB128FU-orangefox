@@ -199,9 +199,6 @@ TW_FRAMERATE := 60
 TW_NO_CPU_TEMP := true
 TW_BACKUP_EXCLUSIONS := /data/fonts
 
-# A/B Device Specific
-AB_OTA_UPDATER := true
-
 # TWRP Debug Flags
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
