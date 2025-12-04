@@ -25,11 +25,11 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-# QCOM FBE decryption - disabled as Lenovo's FBE implementation is not compatible
-# import /init.recovery.qcom_decrypt.rc
+# QCOM FBE decryption
+import /init.recovery.qcom_decrypt.rc
 
-# start keystore2 - for decryption (only if exists)
-# import /system/etc/init/keystore2.rc
+# start keystore2 - for decryption
+import /system/etc/init/keystore2.rc
 
 # add mtp and mass_storage support
 import /init.tb128fu_usb.rc
