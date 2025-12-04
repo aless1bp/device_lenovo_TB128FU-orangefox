@@ -85,7 +85,7 @@ mka recoveryimage
 ## Features
 
 ✅ **Working:**
-- Display and touch
+- Display and touch (with optimized initialization for Android 13)
 - Internal storage access
 - MicroSD card support
 - USB OTG
@@ -96,38 +96,78 @@ mka recoveryimage
 - Fastbootd support
 - A/B partition support
 - Dynamic partition support
+- Modern haptics (AIDL support)
+- Recovery boot on Android 13
 
 ⚠️ **Notes:**
-- First boot may take 60-90 seconds due to initialization
-- Screen brightness is set early in boot process to prevent black screen issues
-- Display remains active throughout boot (no screen blanking)
-- USB controller is properly configured for fastbootd
+- **First boot takes 60-90 seconds** - Touch initialization is delayed by 1.5 seconds to prevent deadlock, and other subsystems need time to initialize
+- **Screen brightness set early** - Display brightness (200/255) is set at early-init stage to prevent black screen
+- **Display stays active** - Screen blanking is disabled throughout boot process
+- **Android 13 optimized** - Recovery uses modern property handling and AIDL haptics
+- **Enhanced debugging** - Kernel logging enabled for troubleshooting (`printk.devkmsg=on`)
 
 ## Troubleshooting
 
 ### Device stuck at OrangeFox logo
-This issue has been resolved in the latest build. The problem was caused by screen blanking and delayed display initialization during boot. The following fixes have been implemented:
+**FIXED in latest build (December 2024)** - This issue has been resolved with comprehensive fixes for Android 13 compatibility.
 
-1. **Early brightness initialization** - Display brightness is now set at the earliest boot stage (early-init)
-2. **Multiple brightness checkpoints** - Brightness is maintained throughout all boot stages
-3. **Screen blank prevention** - Added `TW_SCREEN_BLANK_ON_BOOT := 0` flag to prevent screen from blanking
+**Root causes identified:**
+1. Screen blanking and delayed display initialization during boot
+2. Android 13 specific property handling issues
+3. Touch subsystem initialization race condition
+4. Missing framebuffer device wait
 
-If you still experience issues:
-1. **Wait at least 60-90 seconds** - First boot takes longer due to initialization
-2. **Check flash partition** - Ensure you flashed to the correct recovery partition:
+**Fixes implemented:**
+1. **Early brightness initialization** - Display brightness set at earliest boot stage (early-init)
+2. **Multiple brightness checkpoints** - Brightness maintained throughout all boot stages (early-init, init, fs, boot, post-fs)
+3. **Screen blank prevention** - Added `TW_SCREEN_BLANK_ON_BOOT := 0` flag
+4. **Touch initialization delay** - Added 1.5 second delay (`TW_DELAY_TOUCH_INIT_MS := 1500`) to prevent UI deadlock
+5. **Android 13 compatibility** - Added `TW_NO_LEGACY_PROPS := true` for modern property handling
+6. **Framebuffer wait** - Added wait for `/dev/graphics/fb0` to ensure display subsystem is ready
+7. **Enhanced logging** - Added `printk.devkmsg=on` to kernel cmdline for debugging
+
+**If you still experience the stuck logo issue:**
+
+1. **Wait 60-90 seconds on first boot** - Initial boot takes longer due to initialization and touch delay
+   
+2. **Verify correct flashing** - Ensure you flashed to the recovery partition:
    ```bash
    fastboot flash recovery recovery.img
+   fastboot reboot recovery
    ```
-3. **Verify bootloader unlock** - Recovery requires an unlocked bootloader
-4. **Try manual reboot to recovery**:
-   - Power off the device completely
-   - Hold Volume Up + Power button together
+
+3. **Check bootloader unlock** - Recovery requires an unlocked bootloader:
+   ```bash
+   fastboot oem device-info
+   # Look for "Device unlocked: true"
+   ```
+
+4. **Manual recovery boot** - Try booting to recovery manually:
+   - Power off the device completely (hold Power for 10+ seconds)
+   - Hold **Volume Up + Power** together
    - Keep holding until you see the OrangeFox logo
-   - Wait for the recovery UI to load (may take 60-90 seconds on first boot)
-5. **Check for error messages** - Connect via ADB and check logs:
+   - **Wait at least 90 seconds** for UI to appear (longer on first boot)
+
+5. **Enable ADB debugging** - Check recovery logs for errors:
    ```bash
    adb wait-for-recovery
-   adb shell dmesg
+   adb shell dmesg | grep -i "recovery\|twrp\|graphics\|fb0"
+   adb logcat -d > recovery.log
+   ```
+
+6. **Rebuild recovery image** - If using an older build, rebuild with latest device tree:
+   ```bash
+   cd ~/OrangeFox
+   . build/envsetup.sh
+   lunch fox_TB128FU-eng
+   mka clean
+   mka recoveryimage
+   ```
+
+7. **Check for hardware issues** - If none of the above work:
+   - Try a different USB cable and port
+   - Ensure battery is charged above 50%
+   - Test with stock recovery to verify hardware is working
    ```
 
 ### Touch not working
