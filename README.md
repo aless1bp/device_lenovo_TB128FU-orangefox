@@ -105,14 +105,15 @@ mka recoveryimage
 ## Troubleshooting
 
 ### Device stuck at OrangeFox logo
-This issue has been resolved in the latest build. The problem was caused by screen blanking on boot. If you still experience issues:
-1. Wait at least 60 seconds - first boot takes longer
-2. Check that you flashed to the correct partition
-3. Ensure your bootloader is unlocked
-4. Try rebooting to recovery mode again
+This can occur during initial boot with encrypted data. The recovery is initializing FBE decryption services.
+1. **Wait at least 60-90 seconds** - first boot with encrypted data takes longer for service initialization
+2. Touch initialization is delayed by 1 second to allow proper service startup
+3. If it persists beyond 90 seconds, check that you flashed to the correct partition
+4. Ensure your bootloader is unlocked
+5. If recovery still won't start, performing a wipe data/cache will clear encryption and allow faster boot
 
 ### Touch not working
-The touch screen is configured with XY swap, X flip, and Y flip for proper operation in portrait mode.
+The touch screen is configured with XY swap only for proper operation in portrait mode.
 
 ### Decryption issues
 - The recovery supports FBE with metadata decryption
@@ -126,7 +127,7 @@ The touch screen is configured with XY swap, X flip, and Y flip for proper opera
 - Theme: portrait_hdpi
 - Brightness path: `/sys/class/backlight/panel0-backlight/brightness`
 - Default brightness: 200/255
-- Touch configuration: XY swapped, X flipped, Y flipped
+- Touch configuration: XY swapped only
 
 ### Partitions
 - A/B device with virtual A/B support
