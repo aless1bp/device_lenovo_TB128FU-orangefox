@@ -34,9 +34,14 @@ import /system/etc/init/keystore2.rc
 # add mtp and mass_storage support
 import /init.tb128fu_usb.rc
 
-on init
+on early-init
+    # Set brightness early to prevent black screen
     write /sys/class/backlight/panel0-backlight/brightness 200
+    
+on init
     setprop sys.usb.configfs 1
+    # Ensure display stays on
+    write /sys/class/backlight/panel0-backlight/brightness 200
 
 on property:ro.boot.usbcontroller=*
     setprop sys.usb.controller ${ro.boot.usbcontroller}
@@ -49,6 +54,10 @@ on fs
 ## fastbootd requires health-hal and boot-hal
 on boot
     start health-hal-2-1
+    # Keep display on during boot
+    write /sys/class/backlight/panel0-backlight/brightness 200
 
 on post-fs
     start boot-hal-1-1
+    # Ensure brightness is maintained
+    write /sys/class/backlight/panel0-backlight/brightness 200
