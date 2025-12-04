@@ -112,7 +112,7 @@ This issue has been resolved in the latest build. The problem was caused by scre
 4. Try rebooting to recovery mode again
 
 ### Touch not working
-The touch screen is configured with XY swap and Y flip for proper operation in portrait mode.
+The touch screen is configured with X flip for proper operation in portrait mode.
 
 ### Decryption issues
 - The recovery supports FBE with metadata decryption
@@ -126,7 +126,8 @@ The touch screen is configured with XY swap and Y flip for proper operation in p
 - Theme: portrait_hdpi
 - Brightness path: `/sys/class/backlight/panel0-backlight/brightness`
 - Default brightness: 200/255
-- Touch configuration: XY swapped, Y flipped
+- Touch configuration: X flipped
+- Rotation support: 180° vertical orientation
 
 ### Partitions
 - A/B device with virtual A/B support
