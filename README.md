@@ -98,18 +98,37 @@ mka recoveryimage
 - Dynamic partition support
 
 ⚠️ **Notes:**
-- First boot may take longer than expected
-- Screen brightness defaults to 200/255 for visibility
+- First boot may take 60-90 seconds due to initialization
+- Screen brightness is set early in boot process to prevent black screen issues
+- Display remains active throughout boot (no screen blanking)
 - USB controller is properly configured for fastbootd
 
 ## Troubleshooting
 
 ### Device stuck at OrangeFox logo
-This issue has been resolved in the latest build. The problem was caused by screen blanking on boot. If you still experience issues:
-1. Wait at least 60 seconds - first boot takes longer
-2. Check that you flashed to the correct partition
-3. Ensure your bootloader is unlocked
-4. Try rebooting to recovery mode again
+This issue has been resolved in the latest build. The problem was caused by screen blanking and delayed display initialization during boot. The following fixes have been implemented:
+
+1. **Early brightness initialization** - Display brightness is now set at the earliest boot stage (early-init)
+2. **Multiple brightness checkpoints** - Brightness is maintained throughout all boot stages
+3. **Screen blank prevention** - Added `TW_SCREEN_BLANK_ON_BOOT := 0` flag to prevent screen from blanking
+
+If you still experience issues:
+1. **Wait at least 60-90 seconds** - First boot takes longer due to initialization
+2. **Check flash partition** - Ensure you flashed to the correct recovery partition:
+   ```bash
+   fastboot flash recovery recovery.img
+   ```
+3. **Verify bootloader unlock** - Recovery requires an unlocked bootloader
+4. **Try manual reboot to recovery**:
+   - Power off the device completely
+   - Hold Volume Up + Power button together
+   - Keep holding until you see the OrangeFox logo
+   - Wait for the recovery UI to load (may take 60-90 seconds on first boot)
+5. **Check for error messages** - Connect via ADB and check logs:
+   ```bash
+   adb wait-for-recovery
+   adb shell dmesg
+   ```
 
 ### Touch not working
 The touch screen is configured with XY swap and Y flip for proper operation in portrait mode.
