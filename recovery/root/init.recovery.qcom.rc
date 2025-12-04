@@ -28,8 +28,8 @@
 # QCOM FBE decryption
 import /init.recovery.qcom_decrypt.rc
 
-# start keystore2 - for decryption
-import /system/etc/init/keystore2.rc
+# start keystore2 - for decryption (only if exists)
+# import /system/etc/init/keystore2.rc
 
 # add mtp and mass_storage support
 import /init.tb128fu_usb.rc
@@ -43,7 +43,7 @@ on property:ro.boot.usbcontroller=*
     write /sys/class/udc/${ro.boot.usbcontroller}/device/../mode peripheral
 
 on fs
-    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    wait /dev/block/platform/soc/${ro.boot.bootdevice} 30
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
 ## fastbootd requires health-hal and boot-hal
