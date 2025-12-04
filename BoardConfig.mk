@@ -53,7 +53,8 @@ BOARD_KERNEL_CMDLINE += swiotlb=2048
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=4e00000.dwc3
 BOARD_KERNEL_CMDLINE += androidboot.console=ttyMSM0
-BOARD_KERNEL_CMDLINE += loop.max_part=7 
+BOARD_KERNEL_CMDLINE += loop.max_part=7
+BOARD_KERNEL_CMDLINE += printk.devkmsg=on 
 
 BOARD_HEADER_VERSION       := 2
 BOARD_KERNEL_PAGESIZE      := 4096
@@ -192,6 +193,10 @@ TW_USE_TOOLBOX := true
 TW_FRAMERATE := 60
 TW_NO_CPU_TEMP := true
 TW_BACKUP_EXCLUSIONS := /data/fonts
+TW_DELAY_TOUCH_INIT_MS := 1500
+TW_FORCE_CPUINFO_FOR_DEVICE_ID := true
+TW_NO_LEGACY_PROPS := true
+TW_SUPPORT_INPUT_AIDL_HAPTICS := true
 
 # A/B Device Specific
 AB_OTA_UPDATER := true

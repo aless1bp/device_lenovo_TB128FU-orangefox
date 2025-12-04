@@ -42,6 +42,9 @@ on init
     setprop sys.usb.configfs 1
     # Ensure display stays on
     write /sys/class/backlight/panel0-backlight/brightness 200
+    
+    # Give time for display subsystem to initialize
+    wait /dev/graphics/fb0 5
 
 on property:ro.boot.usbcontroller=*
     setprop sys.usb.controller ${ro.boot.usbcontroller}
@@ -50,6 +53,9 @@ on property:ro.boot.usbcontroller=*
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+    
+    # Ensure display is ready before proceeding
+    write /sys/class/backlight/panel0-backlight/brightness 200
 
 ## fastbootd requires health-hal and boot-hal
 on boot
