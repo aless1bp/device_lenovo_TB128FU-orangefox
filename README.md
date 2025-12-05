@@ -36,108 +36,7 @@ Bluetooth    | v5.1
 USB          | USB-C 2.0 (charging/storage/OTG)
 Release Date | October 2022 (India)
 
-## To build
 
-### Build with OrangeFox Recovery 12.1
-
-#### Prerequisites
-- Set up [OrangeFox Build Environment](https://gitlab.com/OrangeFox/sync)
-- Sync the OrangeFox 12.1 manifest
-
-#### Build Commands
-```bash
-. build/envsetup.sh
-lunch fox_TB128FU-eng
-mka recoveryimage
-```
-
-#### Alternative TWRP Build
-You can also build with [minimal AOSP TWRP for Android 12.1](https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp/tree/twrp-12.1):
-```bash
-. build/envsetup.sh
-lunch twrp_TB128FU-eng
-mka recoveryimage
-```
-
-## Installation
-
-### Prerequisites
-- Unlocked bootloader
-- ADB and Fastboot tools installed
-- USB debugging enabled
-
-### Installation Steps
-1. Boot your tablet into fastboot mode:
-   - Power off the device
-   - Hold Volume Down + Power until you see the fastboot screen
-
-2. Flash the recovery image:
-   ```bash
-   fastboot flash recovery recovery.img
-   ```
-
-3. Reboot to recovery:
-   ```bash
-   fastboot reboot recovery
-   ```
-   Or manually: hold Volume Up + Power after flashing
-
-## Features
-
-✅ **Working:**
-- Display and touch
-- Internal storage access
-- MicroSD card support
-- USB OTG
-- ADB sideload
-- File-based encryption (FBE) decryption
-- Backup and restore
-- Install/Flash ZIPs
-- Fastbootd support
-- A/B partition support
-- Dynamic partition support
-
-⚠️ **Notes:**
-- First boot may take longer than expected
-- Screen brightness defaults to 200/255 for visibility
-- USB controller is properly configured for fastbootd
-
-## Troubleshooting
-
-### Device stuck at OrangeFox logo
-This issue has been resolved in the latest build. The problem was caused by screen blanking on boot. If you still experience issues:
-1. Wait at least 60 seconds - first boot takes longer
-2. Check that you flashed to the correct partition
-3. Ensure your bootloader is unlocked
-4. Try rebooting to recovery mode again
-
-### Touch not working
-The touch screen is configured with XY swap and Y flip for proper operation in portrait mode.
-
-### Decryption issues
-- The recovery supports FBE with metadata decryption
-- Make sure you enter the correct PIN/password
-- Data decryption happens automatically on correct password entry
-
-## Device-Specific Information
-
-### Display Configuration
-- Resolution: 1200x2000 (portrait mode)
-- Theme: portrait_hdpi
-- Brightness path: `/sys/class/backlight/panel0-backlight/brightness`
-- Default brightness: 200/255
-- Touch configuration: XY swapped, Y flipped
-
-### Partitions
-- A/B device with virtual A/B support
-- Dynamic partitions: system, system_ext, vendor, product
-- Recovery partition: 100MB
-- Boot partition: 100MB
-
-### Encryption
-- File-based encryption (FBE) with AES-256-XTS
-- Metadata encryption support
-- Keymaster 4.1
 
 ## Credits
 - Maintainer: [aless1bp](https://github.com/aless1bp)
@@ -146,3 +45,4 @@ The touch screen is configured with XY swap and Y flip for proper operation in p
 
 ## Support
 For issues and discussion, visit the [XDA-Developer thread](https://forum.xda-developers.com/t/recovery-tb128fu-unofficial-twrp-3-7-x-for-lenovo-tab-m10-plus-gen-3-sdm680.4538035/)
+
