@@ -55,7 +55,7 @@ FOX_VIRTUAL_AB_DEVICE := 1
 # Maximum permissible splash image size (in kilobytes); do *NOT* increase
 OF_SPLASH_MAX_SIZE := 130
 
-OF_ADVANCED_SECURITY := 1
+OF_ADVANCED_SECURITY := 0
 
 # Custom pic for maintainer about section info
 OF_MAINTAINER := aless1bp
