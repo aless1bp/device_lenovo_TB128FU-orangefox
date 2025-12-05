@@ -43,26 +43,3 @@ PRODUCT_MANUFACTURER := LENOVO
 # Additional device identifiers for OTA compatibility
 TARGET_OTA_ASSERT_DEVICE := TB128FU,qssi
 
-# OrangeFox settings
-OF_HIDE_NOTCH := 1
-OF_USE_GREEN_LED := 0
-OF_FLASHLIGHT_ENABLE := 0
-OF_ALLOW_DISABLE_NAVBAR := 0
-
-OF_AB_DEVICE_WITH_RECOVERY_PARTITION := 1
-FOX_VIRTUAL_AB_DEVICE := 1
-
-# Maximum permissible splash image size (in kilobytes); do *NOT* increase
-OF_SPLASH_MAX_SIZE := 130
-
-# Custom pic for maintainer about section info
-OF_MAINTAINER := aless1bp
-
-# OrangeFox GUI settings
-OF_SCREEN_H := 2000
-OF_STATUS_H := 100
-OF_STATUS_INDENT_LEFT := 48
-OF_STATUS_INDENT_RIGHT := 48
-OF_CLOCK_POS := 1
-OF_OPTIONS_LIST_NUM := 6
-
