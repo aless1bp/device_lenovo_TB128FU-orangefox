@@ -1,6 +1,0 @@
-service vendor.keymaster-4-1-qti /system/bin/android.hardware.keymaster@4.1-service-qti
-    class early_hal
-    user system
-    group system drmrpc
-    capabilities 32
-    onrestart restorecon /data/misc/keymaster
