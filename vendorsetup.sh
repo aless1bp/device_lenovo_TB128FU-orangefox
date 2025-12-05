@@ -20,8 +20,8 @@ export BUILD_USERNAME="nobody"
 export BUILD_HOSTNAME="android-build"
 
 # ===== DEVICE ALTERNATIVES =====
-export TARGET_DEVICE_ALT="TB-128FU, tb128fu"
-export FOX_TARGET_DEVICES="TB-128FU, tb128fu"
+export TARGET_DEVICE_ALT="TB-128FU, tb128fu, qssi"
+export FOX_TARGET_DEVICES="TB-128FU, tb128fu, qssi"
 
 # ===== MAGISKBOOT & PATCHES =====
 export OF_USE_MAGISKBOOT=1
