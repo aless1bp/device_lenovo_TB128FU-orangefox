@@ -89,8 +89,8 @@ PRODUCT_PACKAGES += \
 	qcom_decrypt_fbe
 
 PRODUCT_COPY_FILES += \
-    vendor/bin/hw/android.system.keystore2-service:recovery/root/system/bin/android.system.keystore2-service \
-    vendor/etc/vintf/manifest/android.system.keystore2-service.xml:recovery/root/vendor/etc/vintf/manifest/android.system.keystore2-service.xml
+    system/bin/android.system.keystore2-service:recovery/root/system/bin/android.system.keystore2-service \
+    system/etc/vintf/manifest/android.system.keystore2-service.xml:recovery/root/vendor/etc/vintf/manifest/android.system.keystore2-service.xml
 
 # Blacklist
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
