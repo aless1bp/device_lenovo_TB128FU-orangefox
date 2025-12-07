@@ -88,10 +88,6 @@ PRODUCT_PACKAGES += \
 	qcom_decrypt \
 	qcom_decrypt_fbe
 
-PRODUCT_COPY_FILES += \
-    system/bin/android.system.keystore2-service:recovery/root/system/bin/android.system.keystore2-service \
-    system/etc/vintf/manifest/android.system.keystore2-service.xml:recovery/root/vendor/etc/vintf/manifest/android.system.keystore2-service.xml
-
 # Blacklist
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
     ro.bootimage.build.date.utc \
