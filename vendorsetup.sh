@@ -118,7 +118,7 @@ export FOX_USE_UPDATED_MAGISKBOOT=0         # Use current magiskboot version
 # Filesystem & Tools
 export FOX_USE_FSCK_EROFS_BINARY=1          # fsck.erofs binary for EROFS support
 export FOX_USE_PATCHELF_BINARY=1            # patchelf binary (helpful utility)
-export FOX_USE_DMSETUP=1                    # dmsetup for partition formatting
+#export FOX_USE_DMSETUP=1                    # dmsetup for partition formatting
 export OF_USE_DMCTL=1                       # dmctl as alternative
 
 # Size Optimization (conflictual with some tools, kept minimal)
