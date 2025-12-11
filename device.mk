@@ -93,4 +93,12 @@ PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
     ro.bootimage.build.date.utc \
     ro.build.date.utc
 
+# Vibrator HAL
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.3-service.qti \
+    android.hardware.vibrator@1.3-impl.qti
 
+# Haptic Feedback
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/root/system/etc/vibrator_touchscreen.xml:system/etc/vibrator_touchscreen.xml \
+    $(LOCAL_PATH)/recovery/root/system/etc/vibrator_button.xml:system/etc/vibrator_button.xml
