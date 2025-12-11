@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  Button/Touch Feedback Vibration Configuration for OrangeFox Recovery
+  Lenovo Tab M10 Plus Gen 3 (TB128FU)
+-->
+<vibrator-config>
+  <!-- Button press vibration -->
+  <haptic>
+    <id>button_press</id>
+    <pattern>
+      <entry duration="20" amplitude="80" />
+    </pattern>
+  </haptic>
+
+  <!-- Touch vibration for UI elements -->
+  <haptic>
+    <id>touch_feedback</id>
+    <pattern>
+      <entry duration="15" amplitude="70" />
+    </pattern>
+  </haptic>
+
+  <!-- Long press vibration -->
+  <haptic>
+    <id>long_press</id>
+    <pattern>
+      <entry duration="30" amplitude="90" />
+    </pattern>
+  </haptic>
+
+  <!-- Selection/click feedback -->
+  <haptic>
+    <id>selection</id>
+    <pattern>
+      <entry duration="10" amplitude="60" />
+    </pattern>
+  </haptic>
+
+  <!-- Confirmation vibration (double pulse) -->
+  <haptic>
+    <id>confirmation</id>
+    <pattern>
+      <entry duration="20" amplitude="85" />
+      <delay>10</delay>
+      <entry duration="20" amplitude="85" />
+    </pattern>
+  </haptic>
+
+  <!-- Error/warning vibration (triple pulse) -->
+  <haptic>
+    <id>error</id>
+    <pattern>
+      <entry duration="15" amplitude="95" />
+      <delay>10</delay>
+      <entry duration="15" amplitude="95" />
+      <delay>10</delay>
+      <entry duration="15" amplitude="95" />
+    </pattern>
+  </haptic>
+
+</vibrator-config>

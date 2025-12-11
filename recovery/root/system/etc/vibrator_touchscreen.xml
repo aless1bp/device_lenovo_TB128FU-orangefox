@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  Touchscreen Vibration Configuration for OrangeFox Recovery
+  Lenovo Tab M10 Plus Gen 3 (TB128FU)
+-->
+<vibrator-config>
+  <!-- Light touch -->
+  <haptic>
+    <id>touch_light</id>
+    <pattern>
+      <entry duration="10" amplitude="50" />
+    </pattern>
+  </haptic>
+
+  <!-- Medium touch -->
+  <haptic>
+    <id>touch_medium</id>
+    <pattern>
+      <entry duration="15" amplitude="75" />
+    </pattern>
+  </haptic>
+
+  <!-- Strong touch -->
+  <haptic>
+    <id>touch_strong</id>
+    <pattern>
+      <entry duration="20" amplitude="100" />
+    </pattern>
+  </haptic>
+
+  <!-- Scroll feedback -->
+  <haptic>
+    <id>scroll</id>
+    <pattern>
+      <entry duration="5" amplitude="40" />
+    </pattern>
+  </haptic>
+
+  <!-- Gesture feedback -->
+  <haptic>
+    <id>gesture</id>
+    <pattern>
+      <entry duration="25" amplitude="80" />
+    </pattern>
+  </haptic>
+
+</vibrator-config>
