@@ -12,3 +12,67 @@ ro.crypto.volume.metadata.method=dm-default-key
 
 # Needed for keymaster randomly hanging boot
 keymaster_ver=4.1
+
+# ===== PERFORMANCE & BOOT OPTIMIZATION =====
+ro.vendor.extension_library=/vendor/lib/rfsa/adsp/libfastcvopt.so
+ro.config.ringtone=Zen.ogg
+dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5
+dalvik.vm.dex2oat-threads=6
+dalvik.vm.heapgrowthlimit=384m
+dalvik.vm.heapmaxfree=8m
+dalvik.vm.heapminfree=512k
+dalvik.vm.heapsize=512m
+dalvik.vm.heapstartsize=8m
+dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5
+dalvik.vm.image-dex2oat-threads=6
+dalvik.vm.isa.arm.features=default
+dalvik.vm.isa.arm.variant=cortex-a75
+dalvik.vm.lockprof.threshold=500
+dalvik.vm.stack-trace-file=/data/anr/traces.txt
+debug.stagefright.omx_default_color_format=2130706177
+
+# ===== BOOT SPEED OPTIMIZATION =====
+persist.sys.usb.config=adb
+persist.sys.timezone=UTC
+ro.config.alarm_alert=Oxygen.ogg
+ro.com.google.clientidbase=android-google
+ro.com.google.gmsversion=android_12
+ro.config.notification_sound=pixiedust.ogg
+ro.setupwizard.mode=OPTIONAL
+ro.com.android.dataroaming=false
+
+# ===== GRAPHICS OPTIMIZATION =====
+debug.composition.type=c2d
+debug.egl.hw=1
+debug.egl.profiler_ms=0
+debug.force_rtl=0
+debug.mdpcomp.logs=0
+debug.overlayui.enable=1
+debug.qctwa.preservebuf=1
+debug.sf.early_phase_offset_ns=500000000
+debug.sf.early_app_phase_offset_ns=500000000
+debug.sf.early_gl_phase_offset_ns=0
+debug.sf.hw=1
+debug.sf.latch_unsignaled=1
+persist.debug.ust.flags=3074
+persist.debug.wfd.enable=1
+persist.demo.hdmirotationlock=false
+persist.hwc.mdpcomp.enable=true
+persist.hwc.ptor.enable=true
+persist.sys.isUsbOtgEnabled=true
+
+# ===== THERMAL OPTIMIZATION =====
+persist.sys.thermal.disable=0
+ro.thermal_warmth_simulator.enable=false
+
+# ===== VIBRATION & HAPTIC FEEDBACK =====
+ro.haptic.feedback=1
+ro.haptic.feedback.strength=2
+ro.vibrator.implementation=timed
+ro.vibrator.default_amplitude=80
+persist.sys.haptic.feedback=1
+persist.sys.haptic.feedback.strength=2
+ro.com.android.dataroaming=false
+ro.support.vibration=true
+ro.vibrator.max_amplitude=90
+persist.vibrator.enabled=1
