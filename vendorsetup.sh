@@ -105,7 +105,7 @@ export OF_LEGACY_ANDROID_12_QCOM=1
 
 # ===== KERNEL CONFIG =====
 export OF_FORCE_PREBUILT_KERNEL=1
-export OF_PREBUILT_KERNEL="/home/alexis/Pictures/device_lenovo_TB128FU-orangefox/prebuilt/kernel"
+export OF_PREBUILT_KERNEL="device/lenovo/TB128FU/prebuilt/kernel"
 
 # ===== VIBRATION & HAPTIC FEEDBACK =====
 export OF_SUPPORT_VIBRATION=1
