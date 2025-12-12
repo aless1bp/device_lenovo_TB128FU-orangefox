@@ -75,3 +75,7 @@ persist.sys.haptic.feedback.strength=2
 ro.support.vibration=true
 ro.vibrator.max_amplitude=60
 persist.vibrator.enabled=1
+
+# Para recovery seguro
+ro.recovery.ui.margin_height=0
+ro.recovery.ui.margin_width=0
