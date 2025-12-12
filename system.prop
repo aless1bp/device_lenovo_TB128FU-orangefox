@@ -67,12 +67,11 @@ ro.thermal_warmth_simulator.enable=false
 
 # ===== VIBRATION & HAPTIC FEEDBACK =====
 ro.haptic.feedback=1
-ro.haptic.feedback.strength=2
+ro.haptic.feedback.strength=1
 ro.vibrator.implementation=timed
-ro.vibrator.default_amplitude=80
+ro.vibrator.default_amplitude=50
 persist.sys.haptic.feedback=1
 persist.sys.haptic.feedback.strength=2
-ro.com.android.dataroaming=false
 ro.support.vibration=true
-ro.vibrator.max_amplitude=90
+ro.vibrator.max_amplitude=60
 persist.vibrator.enabled=1
