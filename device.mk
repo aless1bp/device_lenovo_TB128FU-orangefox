@@ -102,3 +102,24 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/system/etc/vibrator_touchscreen.xml:system/etc/vibrator_touchscreen.xml \
     $(LOCAL_PATH)/recovery/root/system/etc/vibrator_button.xml:system/etc/vibrator_button.xml
+
+# ============================================================================
+# ==== KEYSTORE V2 / KEYMINT CONFIGURATION ====
+# ============================================================================
+
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@4.1-service \
+    android.hardware.keymaster@4.1-impl-qti \
+    android.hardware.gatekeeper@1.0-impl-qti \
+    android.hardware.gatekeeper@1.0-service.qti \
+    libkeystore2 \
+    libkeymasterutils \
+    libcrypto
+
+PRODUCT_PACKAGES += \
+    android.hardware.keymint@1.0-impl \
+    android.hardware.keymint@1.0-service
+
+PRODUCT_PACKAGES += \
+    libcertificatelib \
+    libattestationcommonutils
