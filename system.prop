@@ -79,3 +79,21 @@ persist.vibrator.enabled=1
 # Para recovery seguro
 ro.recovery.ui.margin_height=0
 ro.recovery.ui.margin_width=0
+
+# ============================================================================
+# ==== KEYSTORE V2 PROPERTIES (CORRECTED) ====
+# ============================================================================
+
+ro.keystore.arch=bengal
+ro.keystore.major.version=2
+ro.hardware.keystore=bengal
+ro.hardware.keymaster=bengal
+ro.keystore2.max_connections=1
+ro.keystore2.max_operation_time_millis=5000
+ro.hardware.keymint=bengal
+ro.keymint.implementation=bengal
+ro.boot.hardware.sku=tb128fu
+ro.crypto.type=block
+ro.board.platform=bengal
+ro.chipname=bengal
+ro.hardware=qcom
