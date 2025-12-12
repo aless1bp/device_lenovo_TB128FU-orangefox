@@ -10,8 +10,6 @@ ro.crypto.allow_encrypt_override=true
 ro.crypto.dm_default_key.options_format.version=2
 ro.crypto.volume.metadata.method=dm-default-key
 
-# Needed for keymaster randomly hanging boot
-keymaster_ver=4.1
 
 # ===== PERFORMANCE & BOOT OPTIMIZATION =====
 ro.vendor.extension_library=/vendor/lib/rfsa/adsp/libfastcvopt.so
@@ -36,7 +34,6 @@ persist.sys.usb.config=adb
 persist.sys.timezone=UTC
 ro.config.alarm_alert=Oxygen.ogg
 ro.com.google.clientidbase=android-google
-ro.com.google.gmsversion=android_12
 ro.config.notification_sound=pixiedust.ogg
 ro.setupwizard.mode=OPTIONAL
 ro.com.android.dataroaming=false
@@ -76,7 +73,7 @@ ro.support.vibration=true
 ro.vibrator.max_amplitude=60
 persist.vibrator.enabled=1
 
-# Para recovery seguro
+#Para recovery seguro
 ro.recovery.ui.margin_height=0
 ro.recovery.ui.margin_width=0
 
