@@ -163,6 +163,22 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 # Treble
 BOARD_VNDK_VERSION := current
 
+# ============================================================================
+# ==== KEYSTORE V2 / KEYMINT CONFIGURATION ====
+# ============================================================================
+
+TARGET_KEYSTORE_V2 := true
+TARGET_PROVIDES_KEYMASTER := true
+TARGET_KEYMASTER_VARIANT := bengal
+TARGET_KEYMASTER_MODULES := bengal
+TARGET_KEYMASTER_WAIT_FOR_QSEE := true
+TARGET_KEYMINT := true
+KEYSTORE_HARDWARE := bengal
+
+BOARD_SEPOLICY_DIRS += \
+    device/lenovo/TB128FU/sepolicy \
+    system/sepolicy/vendor
+
 # TWRP/OrangeFox Recovery flags
 RECOVERY_SDCARD_ON_DATA := true
 RECOVERY_TOUCHSCREEN_FLIP_X := true
